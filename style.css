@@ -11,6 +11,7 @@
     /* Couleurs */
     --text-color: #f1f1f1f1 ;
     --btn-color: #00aef9f7 ;
+    --black-color: #030303 ;
 }
 body {
     background: #141E30;  /* fallback for old browsers */
@@ -26,14 +27,14 @@ body {
         /* Header part */
 header {
     display: flex ;
-    justify-content: space-between ;
-    align-items: center ;
-    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
     padding: 8px 0px;
 }
 #my-name {
     color: var(--text-color);
 }
+
 .dark-light-mode {
     display: flex ;
     justify-content: center ;
@@ -50,7 +51,7 @@ header {
     color: var(--btn-color);
 }
 .dark-light-mode:hover i {
-    color: #030303;
+    color: var(--black-color);
 }
 .dark-light-mode::after {
     content: "" ;
@@ -66,6 +67,10 @@ header {
 }
 .dark-light-mode:hover::after {
     transform: translateX(0);
+}
+nav {
+    grid-column: 12/-1;
+    text-align: right;
 }
 nav li:not(#menu) {
     display: none;
@@ -139,7 +144,7 @@ nav #menu i {
     color: var(--btn-color) ;
 }
 .container .left-container .btn-2:hover {
-    color: #030303 ;
+    color: var(--black-color) ;
 }
 .container .left-container .btn-2::after {
     background-color: var(--btn-color);
@@ -154,13 +159,13 @@ nav #menu i {
     transform: translateX(0);
 }
 .container .left-container .social-media {
-    display: flex ;
-    align-items: center ;
     position: absolute ;
-    bottom: 0px ;
-    left: 38%;
+    width: 100% ;
+    bottom: 0px;
+    display: flex ;
+    justify-content: center ;
 }
-.container .social-media div {
+.container .social-media span {
     display: flex ;
     justify-content: center ;
     align-items: center;
@@ -178,10 +183,10 @@ nav #menu i {
 .container .social-media i {
     color: var(--btn-color);
 }
-.container .social-media div:hover i {
-    color: #030303;
+.container .social-media span:hover i {
+    color: var(--black-color) ;
 }
-.container .social-media div::after {
+.container .social-media span::after {
     content: "" ;
     position: absolute;
     top: 0px ;
@@ -193,7 +198,7 @@ nav #menu i {
     transform: translateX(-100%);
     transition: transform 0.2s ease-in-out;
 }
-.container .social-media div:hover::after {
+.container .social-media span:hover::after {
     transform: translateX(0);
 }
 .logo-fabrice-code {
