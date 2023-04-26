@@ -30,6 +30,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 8px 0px;
+    border-bottom: 1px solid var(--btn-color);
 }
 #my-name {
     color: var(--text-color);
@@ -68,14 +69,37 @@ header {
 .dark-light-mode:hover::after {
     transform: translateX(0);
 }
-nav {
-    grid-column: 12/-1;
-    text-align: right;
-}
-nav li:not(#menu) {
+.nav-bar {
     display: none;
 }
-nav #menu i {
+/* Class css witch will make the menu slider */
+
+.slider {
+    display: block;
+    position: fixed ;
+    top: 0px ;
+    right: 0px;
+    background-color: var(--text-color) ;
+    height: 100%;
+    width: 54%;
+    padding-top: 54px;
+    z-index: 1;
+    transition: all 0.2s ease-out;
+}
+.slider ul{
+    display: flex ;
+    flex-direction: column ;
+    align-items: center;
+}
+.slider ul li {
+    margin-bottom: 8px ;
+}
+.slider ul a {
+    color: var(--btn-color) ;
+}
+        /*****  ******/
+
+#menu i {
     font-size: 1.2rem ;
 }
 
@@ -84,8 +108,9 @@ nav #menu i {
     position: relative ;
     height: calc(100vh - 106px);
     display: flex ;
-    align-items: center ;
-    flex-wrap: wrap;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
 }
 .container .left-container .dev-hello {
     text-align: center ;
@@ -108,7 +133,7 @@ nav #menu i {
     align-items: center ;
     flex-wrap: wrap ;
 }
-.container .left-container .btn {
+body .btn {
     width: 128px ;
     padding: 10px ;
     background-color: transparent ;
@@ -118,7 +143,7 @@ nav #menu i {
     position: relative;
     overflow: hidden ;
 }
-.container .left-container .btn::after {
+body .btn::after {
     content: "" ;
     position: absolute ;
     top: 0px ;
@@ -203,4 +228,95 @@ nav #menu i {
 }
 .logo-fabrice-code {
     display: none ;
+}
+
+            /* Responsive part */
+
+@media (min-width: 768px) {
+    .container .left-container .dev-hello {
+        font-size: 2.4rem;
+    }
+    .container .left-container .dev-work {
+        font-size: 1.8rem ;
+    }
+}
+@media (min-width: 1024px) {
+    .container .left-container .dev-hello {
+        
+    }
+    .container .left-container .dev-work {
+        font-size: 1.8rem ;
+    }
+}
+
+
+        /****** Contact page ******/
+#contact-page {
+    height: calc(100vh - 106px);
+    display: flex;
+    flex-direction: column ;
+    align-items: center ;
+    justify-content: center;
+}
+
+#formulaire {
+    width: 100%;
+}
+#formulaire .items input,
+#formulaire .items textarea {
+    width: 100%;
+    border: 2px solid var(--btn-color) ;
+    border-radius: 4px ;
+    padding: 10px ;
+    background-color: transparent ;
+}
+#formulaire .item-1{
+    margin-bottom: 16px ;
+}
+#formulaire .item-2{
+    margin-bottom: 24px ;
+}
+#formulaire .item-3{
+    text-align: center;
+}
+#formulaire textarea {
+    resize: none;
+}
+#formulaire input:focus,
+#formulaire textarea:focus{
+    outline: 1px solid var(--btn-color) ;
+}
+#formulaire .btn-1 {
+    transition: color 0.2s ease-in-out ;
+}
+#formulaire .btn-1::after {
+    background-color: var(--btn-color) ;
+    transition: transform 0.2s ease-in-out ;
+}
+#formulaire .btn-1:hover {
+    color: var(--btn-color) ;
+}
+#formulaire .btn-1:hover:after {
+    transform: translateX(100%) ;
+}
+#formulaire input,
+#formulaire textarea {
+    color: var(--btn-color) ;
+}
+
+@media (min-width: 425px){
+    #formulaire {
+        max-width: 432px ;
+        margin: 0px auto;
+    }
+}
+
+
+        /***** About page *****/
+#about-page {
+    height: calc(100vh - 106px);
+    display: flex ;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
 }

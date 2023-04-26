@@ -3,6 +3,7 @@ const darkMode  = document.getElementById('dark-mode') ;
 const lightMode = document.getElementById('light-mode') ;
 const body      = document.querySelector('body') ;
 const myName    = document.getElementById('my-name') ;
+const userName = document.getElementById('user-name') ;
 // Dark mode => Light mode 
 darkMode.addEventListener('click', () =>{
     darkMode.setAttribute('style', 'display: none ;') ;
@@ -17,4 +18,11 @@ lightMode.addEventListener('click', () =>{
     darkMode.setAttribute('style', 'display: inline ;') ;
     body.setAttribute('style', 'background: #141E30; background: -webkit-linear-gradient(to right, #141E30, #243B55); background: linear-gradient(to right, #141E30, #243B55);') ;
     myName.style.color = 'var(--text-color)' ;
+}) ;
+
+// Slider menu
+const navBar = document.querySelector('.nav-bar') ;
+const menu   = document.getElementById('menu') ;
+menu.addEventListener('click', () =>{
+    navBar.classList.toggle('slider') ; 
 }) ;
