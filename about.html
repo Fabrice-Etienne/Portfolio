@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Responsive part -->
+    <link rel="stylesheet" href="./responsives.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Police poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>Portfolio</title>
 </head>
 <body>
     <header>
@@ -20,18 +22,18 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./index.html" class="nav-links">Home</a></li>
+                <li><a href="./about.html" class="nav-links">About</a></li>
+                <li><a href="./projects.html" class="nav-links">Projects</a></li>
+                <li><a href="./contact.html" class="nav-links">Contact</a></li>
             </ul>
         </nav>
         <span id="menu"><i class="fa-solid fa-bars"></i></span>
     </header>
-    <div id="about-page">
-        <h1 id="about-me">About <span>Me</span></h1>
+    <div class="container" id="about-page">
+        <h1 id="about-me">About <span class="me">Me</span></h1>
                 <div class="logo-fabrice-code">
-                    <img src="./images/Logo.jpg" alt="Logo avec : Fabrice code, marqué dessus sur un fond sombre">
+                    <img src="./images/logo fabrice code png.png" alt="Logo avec : Fabrice code, marqué dessus sur un fond sombre">
                 </div>
             <h2 class="dev-work">Fullstack Developer</h2>
         <p class="dev-presentation">
@@ -42,7 +44,7 @@
             <button class="btn btn-1">Read More</button>
         </div>
     </div>
-
+      
     <script src="./script.js"></script>
 </body>
 </html>
