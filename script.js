@@ -1,5 +1,35 @@
-const body      = document.querySelector('body') ;
-const myName    = document.getElementById('my-name') ;
+const body        = document.querySelector('body') ;
+const myName      = document.getElementById('my-name') ;
+const lettersName = ['O', 'R', 'T', 'F', 'O', 'L', 'I', 'O', '.'] ;
+let   index       = 0 ;
+let   interval ;
+
+// This function displays my full name 
+function fullName() {
+
+    if (index < lettersName.length) {
+        myName.innerHTML += lettersName[index] ;
+        index++;
+    }
+    else {
+        clearInterval(interval);
+    }
+    
+  }
+  
+  
+  myName.addEventListener("mouseover", () => {
+    // initializing
+    myName.innerHTML = "P";
+    myName.style.color = "var(--btn-color)";
+    index = 0;
+    interval = setInterval(fullName, 100);
+  });
+  
+  myName.addEventListener("mouseout", () => {
+    clearInterval(interval);
+  });
+
 
 // Dark & light mode
 const darkMode  = document.getElementById('dark-mode') ;
@@ -54,4 +84,14 @@ const navBar = document.querySelector('.nav-bar') ;
 const menu   = document.getElementById('menu') ;
 menu.addEventListener('click', () =>{
     navBar.classList.toggle('slider') ; 
+}) ;
+
+// If user clickon the link projects
+const projectsPage = document.getElementById('projects') ;
+projectsPage.addEventListener('click', () =>{
+    const githubRedirected = confirm('For the moment all my projects are on github. Would you like to be redirected to github ?') ;
+    if (githubRedirected){
+        location.assign('https://github.com/Fabrice-Etienne?tab=repositories', '_blank') ;
+    }
+
 }) ;

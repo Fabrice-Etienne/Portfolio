@@ -13,6 +13,143 @@
     --btn-color: #00aef9f7 ;
     --black-color: #030303 ;
 }
+
+            /* All Class css */
+
+/* For the nav links */
+.active-link {
+    padding-bottom: 2px;
+    color: var(--btn-color) !important ;
+    font-weight: bold ;
+    position: relative;
+    overflow: hidden;
+}
+.active-link::after {
+    content: "" ;
+    position: absolute;
+    bottom: 0px ;
+    left: 0px;
+    width: 100% ;
+    height: 1px ;
+    background-color: var(--btn-color) ;
+    opacity: 0 ;
+    transform: translateX(-100%);
+    transition: opacity 0.4s ease-out ;
+    transition: transform 0.2s ease-out;
+}
+.active-link:hover::after {
+    opacity: 1 ;
+    transform: translateX(0) ;
+}
+
+/* For the container of the all the pages */
+.container {
+    height: calc(100vh - 106px);
+    display: flex ;
+    flex-direction: column ;
+    align-items: center ;
+    justify-content: center ;
+    position: relative;
+}
+.container .dev-hello {
+    text-align: center ; 
+    font-weight: bold ;
+}
+.container .dev-work {
+    text-align: center ;
+    color: var(--btn-color) ;
+}
+.container .dev-presentation {
+    margin: 16px 0px 24px;
+    text-align: justify ;
+    line-height: 1.6 ;
+}
+
+/* menu slider */
+.slider {
+    display: block;
+    position: fixed ;
+    top: 0px ;
+    right: 0px;
+    background-color: var(--text-color) ;
+    height: 100%;
+    width: 54%;
+    padding-top: 54px;
+    z-index: 1;
+    transition: all 0.2s ease-out;
+}
+.slider ul{
+    display: flex ;
+    flex-direction: column ;
+    align-items: center;
+}
+.slider ul li {
+    margin-bottom: 8px ;
+}
+.slider ul a {
+    color: var(--btn-color) ;
+}
+
+/* Class css of the buttons */
+.btns {
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
+    flex-wrap: wrap ;
+}
+.btn-1,
+.btn-2 {
+    background-color: transparent ;
+    width: 128px ;
+    padding: 10px ;
+    border: 1.4px solid var(--btn-color);
+    border-radius: 4px;
+    font-weight: 700 ;
+    position: relative ;
+    overflow: hidden;
+    z-index: 2 ;
+}
+.btn-1 {
+    transition: color 0.2s ease-in-out ;
+}
+.btn-1:hover {
+    color: var(--btn-color) ;
+}
+.btn-1::after, 
+.btn-2::after {
+    content: "" ;
+    position: absolute ;
+    top: 0px ;
+    left: 0px ;
+    width: 100% ;
+    height: 100% ;
+    z-index: -1 ;
+}
+.btn-1::after {
+    background-color: var(--btn-color) ; 
+    transition: transform 0.2s ease-in-out ;
+}
+.btn-1:hover::after {
+    transform: translateX(-100%) ;
+}
+.btn-2 {
+    color: var(--btn-color) ;
+    transition: color 0.2s ease-out ;
+}
+.btn-2:hover {
+    color: var(--black-color) ;
+}
+.btn-2::after {
+    background-color: var(--btn-color) ; 
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out ;
+}
+.btn-2:hover::after {
+    transform: translateX(0) ;
+}
+
+        /***** End of the class css ******/
+
 body {
     background: #141E30;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #141E30, #243B55);  /* Chrome 10-25, Safari 5.1-6 */
@@ -73,129 +210,18 @@ header .nav-bar {
     display: none;
 }
 
-
-/* Class css witch will make the menu slider */
-
-.slider {
-    display: block;
-    position: fixed ;
-    top: 0px ;
-    right: 0px;
-    background-color: var(--text-color) ;
-    height: 100%;
-    width: 54%;
-    padding-top: 54px;
-    z-index: 1;
-    transition: all 0.2s ease-out;
-}
-.slider ul{
-    display: flex ;
-    flex-direction: column ;
-    align-items: center;
-}
-.slider ul li {
-    margin-bottom: 8px ;
-}
-.slider ul a {
-    color: var(--btn-color) ;
-}
-        /***** end of the class ******/
-
 #menu i {
     font-size: 1.2rem ;
 }
+            /***** index page *****/
 
-            /***** Container part *****/
-
-.container {
-    height: calc(100vh - 106px);
-    display: flex ;
-    flex-direction: column ;
-    align-items: center ;
-    justify-content: center;
-}
-.container .dev-hello {
-    text-align: center ; 
-    font-weight: bold ;
-}
-.container .dev-work {
-    text-align: center ;
-    color: var(--btn-color) ;
-}
-.container .dev-presentation {
-    margin: 16px 0px 24px;
-    text-align: justify ;
-    line-height: 1.6 ;
-}
-
-            /***** Class css of the buttons *****/
-
-.btns {
-    display: flex ;
-    justify-content: space-between ;
-    align-items: center ;
-    flex-wrap: wrap ;
-}
-.btn-1,
-.btn-2 {
-    background-color: transparent ;
-    width: 128px ;
-    padding: 10px ;
-    border: 1.4px solid var(--btn-color);
-    border-radius: 4px;
-    font-weight: 700 ;
-    position: relative ;
-    overflow: hidden;
-    z-index: 2 ;
-}
-.btn-1 {
-    transition: color 0.2s ease-in-out ;
-}
-.btn-1:hover {
-    color: var(--btn-color) ;
-}
-.btn-1::after, 
-.btn-2::after {
-    content: "" ;
-    position: absolute ;
-    top: 0px ;
-    left: 0px ;
-    width: 100% ;
-    height: 100% ;
-    z-index: -1 ;
-}
-.btn-1::after {
-    background-color: var(--btn-color) ; 
-    transition: transform 0.2s ease-in-out ;
-}
-.btn-1:hover::after {
-    transform: translateX(-100%) ;
-}
-.btn-2 {
-    color: var(--btn-color) ;
-    transition: color 0.2s ease-out ;
-}
-.btn-2:hover {
-    color: var(--black-color) ;
-}
-.btn-2::after {
-    background-color: var(--btn-color) ; 
-    transform: translateX(-100%);
-    transition: transform 0.2s ease-in-out ;
-}
-.btn-2:hover::after {
-    transform: translateX(0) ;
-}
-
-            /***** End class css of the buttons *****/
-
-.container .social-media {
+#index-page .social-media {
     display: flex ;
     justify-content: center ;
     align-items: center ;
     padding-top: 8% ;
 }
-.container .social-media span {
+#index-page span {
     display: flex ;
     justify-content: center ;
     align-items: center;
@@ -207,17 +233,17 @@ header .nav-bar {
     position: relative ;
     overflow: hidden ;
 }
-.container .social-media .media-1 {
+#index-page .media-1 {
     margin-right: 8px ;
 }
-.container .social-media i {
+#index-page i {
     color: var(--btn-color) ;
     transition: color 0.2s ease-out;
 }
-.container .social-media span:hover i {
+#index-page span:hover i {
     color: var(--black-color) ;
 }
-.container .social-media span::after {
+#index-page span::after {
     content: "" ;
     position: absolute ;
     top: 0px ;
@@ -229,7 +255,7 @@ header .nav-bar {
     transform: translateX(-100%);
     transition: transform 0.2s ease-in-out;
 }
-.container .social-media span:hover::after {
+#index-page span:hover::after {
     transform: translateX(0);
 }
 
@@ -266,19 +292,6 @@ header .nav-bar {
 #formulaire textarea:focus{
     outline: 1px solid var(--btn-color) ;
 }
-#formulaire .btn-1 {
-    transition: color 0.2s ease-in-out ;
-}
-#formulaire .btn-1::after {
-    background-color: var(--btn-color) ;
-    transition: transform 0.2s ease-in-out ;
-}
-#formulaire .btn-1:hover {
-    color: var(--btn-color) ;
-}
-#formulaire .btn-1:hover:after {
-    transform: translateX(100%) ;
-}
 #formulaire input,
 #formulaire textarea {
     color: var(--btn-color) ;
@@ -292,3 +305,159 @@ header .nav-bar {
 #about-page .logo-fabrice-code {
     display: none ;
  }
+
+
+                 /***** Responsive part *****/
+
+@media (min-width: 425px){
+    /* Contact page */
+    #contact-page form {
+        max-width: 432px ;
+    }
+}
+
+@media (min-width: 768px){
+    /* index page */
+    .container .dev-hello,
+    .container #about-me,
+    #contact-title {
+        font-size: 2.4rem ;
+    }
+    .container .dev-work {
+        font-size: 1.8rem ;
+        letter-spacing: 2px;
+    }
+    .btn-1,
+    .btn-2 {
+    width: 144px ;
+    }
+    #index-page .social-media span {
+        height: 40px ;
+        width: 40px ;
+    }
+    #index-page .social-media {
+        padding-top: 4% ;
+    }
+}
+
+@media (min-width: 1024px){
+    .dark-light-mode {
+        position: absolute ;
+        top: 50% ;
+        left: 50% ;
+        transform: translate(-50%, -50%) ;
+    }
+    header #menu {
+        display: none ;
+    }
+    header .nav-bar {
+        display: block ;
+    }
+    header .nav-bar ul {
+        display: flex ;
+        justify-content: right ;
+        align-items: center ;
+    }
+    header .nav-bar li:not(:first-child){
+       margin-left: 16px ;
+    }
+    header .nav-bar a {
+        color:var(--text-color) ;
+        transition: color 0.2s ease-out ;
+    }
+    header .nav-bar a:hover {
+        color:var(--btn-color);
+    }
+    .btn-1,
+    .btn-2 {
+    width: 160px ;
+    }
+        /* index page */
+    #index-page span {
+        height: 40px ;
+        width: 40px ;
+    }
+
+    /* about page */
+    #about-page .logo-fabrice-code {
+        margin: 8px 0px;
+        display: block ;
+        background-color: var(--black-color) ;
+        width: 200px ;
+        height: 200px ;
+        border-radius: 1000px;
+        border: 2px solid var(--btn-color);
+    }
+    #about-page .logo-fabrice-code img{
+        width: 100% ;
+        height: 100% ;
+        border-radius: 1000px ;
+        object-fit: cover ;
+    }
+}
+
+@media (min-width: 1440px){
+    body {
+        padding: 0px 6%;
+    }
+    .container .dev-hello,
+    .container #about-me,
+    #contact-title {
+        font-size: 2.8rem ;
+    }
+    .container .dev-work {
+        font-size: 2.2rem ;
+    }
+
+    /* about page */
+    #about-page .logo-fabrice-code {
+        width: 240px ;
+        height: 240px ;
+    }
+}
+
+@media (min-width: 2000px){
+    #my-name {
+        font-size: 2.4rem ;
+    } 
+    .dark-light-mode {
+        height: 40px ;
+        width: 40px ;
+    }
+    header a {
+        font-size: 1.8rem ;
+    }
+    header .nav-bar li:not(:first-child){
+        margin-left: 40px ;
+     }
+    .container .dev-hello,
+    .container #about-me,
+    #contact-title {
+        font-size: 4.4rem ;
+    }
+    .container .dev-work {
+        font-size: 3.2rem ;
+        letter-spacing: 4px;
+    }
+    .container .dev-presentation {
+        font-size: 1.4rem ;
+    }
+    .btn-1,
+    .btn-2 {
+        width: 320px ;
+        padding: 16px 0px;
+        font-size: 1.4rem ;
+    }
+
+    /* index page */
+    #index-page span {
+        height: 64px ;
+        width: 64px ;
+    }
+    #index-page i {
+        font-size: 2rem ;
+    }
+    #index-page .media-1 {
+        margin-right: 24px ;
+    }
+}
